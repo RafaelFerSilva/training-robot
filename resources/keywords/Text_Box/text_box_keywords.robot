@@ -11,15 +11,11 @@ Validate if the Text Box screen form is visible
   Validate if the submit button is visible
 
 Fill in the form fields on the Text Box screen 
-    ${name}=     FakerLibrary.User Name 
-    ${email}=     FakerLibrary.Email 
-    ${current_address}=     FakerLibrary.Address 
-    ${permanent_address}=     FakerLibrary.Address
-
-    Insert text into the user's name field  ${name} 
-    Insert text into the user's email field  ${email} 
-    Insert text into the user's current address field     ${current_address} 
-    Insert text into the user's permanent address field     ${permanent_address} 
+    [Arguments]    ${user}
+    Insert text into the user's name field  ${user}[name] 
+    Insert text into the user's email field  ${user}[email] 
+    Insert text into the user's current address field     ${user}[current_address] 
+    Insert text into the user's permanent address field     ${user}[permanent_address] 
 
 Submit the form on the Text Box screen 
     Click on the submit button 
@@ -29,4 +25,10 @@ Clear the Text Box screen form fields
     Clear text in user's email field 
     Clear text in user's current address field 
     Clear text in user's permanent address field 
-    Take Screenshot     log_screenshot=true
+  
+Check the output of the Text Box screen form 
+    [Arguments]     ${user} 
+    Check if the user name is being displayed in the Text Box screen form output     ${user}[name]
+    Check if the user email is being displayed in the Text Box screen form output      ${user}[email]
+    Check if the current address is being displayed in the Text Box screen form output     ${user}[current_address]
+    Check if the permanent address is being displayed in the Text Box screen form output     ${user}[permanent_address]

@@ -1,5 +1,6 @@
 *** Settings *** 
 Library    Browser
+Library    String
 Resource    ${EXECDIR}/resources/locators/Text_Box/text_box_locators.robot
 
 *** Keywords *** 
@@ -52,3 +53,21 @@ Validate if the submit button is visible
 
 Click on the submit button 
     Click    ${SUBMIT_BUTTON}
+
+Check if the user name is being displayed in the Text Box screen form output 
+    [Arguments]     ${text} 
+    Get Text     ${OUTPUT_USER_NAME}     ==     Name:${text}
+
+Check if the user email is being displayed in the Text Box screen form output 
+    [Arguments]     ${text} 
+    Get Text     ${OUTPUT_USER_EMAIL}     ==     Email:${text}
+
+Check if the current address is being displayed in the Text Box screen form output 
+    [Arguments]     ${text} 
+    ${element}=    Replace String     ${text}     \n     ${SPACE} 
+    Get Text     ${OUTPUT_CURRENT_ADDRESS}     ==     Current Address :${element}
+
+Check if the permanent address is being displayed in the Text Box screen form output 
+    [Arguments]     ${text} 
+    ${element}=    Replace String     ${text}     \n     ${SPACE} 
+    Get Text     ${OUTPUT_PERMANENT_ADDRESS}     ==     Permananet Address :${element}
