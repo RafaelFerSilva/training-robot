@@ -1,7 +1,5 @@
 *** Settings *** 
-Resource        ${EXECDIR}/resources/keywords/common_keywords.robot 
-Resource        ${EXECDIR}/resources/keywords/Home/home_keywords.robot 
-Resource        ${EXECDIR}/resources/keywords/Category/category_keywords.robot
+Resource        ${EXECDIR}/resources/utils/common_imports.robot 
 Resource        ${EXECDIR}/resources/keywords/Check_Box/check_box_keywords.robot
 
 Suite Setup     Run keywords     Open the browser on the DEMOQA website     AND
