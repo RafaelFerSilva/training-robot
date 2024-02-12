@@ -36,13 +36,21 @@ String Replace
 
 Create data for a fake user 
     ${name}=                  FakerLibrary.User Name 
+    ${last_name}=             FakerLibrary.Last Name
     ${email}=                 FakerLibrary.Email 
     ${current_address}=       FakerLibrary.Address 
     ${permanent_address}=     FakerLibrary.Address
+    ${age}=                   FakerLibrary.Random Number  digits=2 
+    ${salary}=                FakerLibrary.Random Number  digits=4 
+    ${department}=            FakerLibrary.Word
 
-    &{user}=     Create Dictionary     name=${name} 
+    &{user}=     Create Dictionary     name=${name}
+    ...          last_name=${last_name} 
     ...          email=${email} 
     ...          current_address=${current_address} 
     ...          permanent_address=${permanent_address}
+    ...          age=${age}
+    ...          salary=${salary}
+    ...          department=${department}
 
     RETURN     ${user}
