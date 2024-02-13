@@ -7,7 +7,7 @@ Library     FakerLibrary
 ${LOGIN URL}                   https://demoqa.com/
 ${BROWSER}                     chromium     
 ${HEADLESS}                    false 
-${VIEWPORT}                    {'width': 1280, 'height': 720}
+${VIEWPORT}                    {'width': 1920, 'height': 1080}
 
 *** Keywords ***
 Configure New Page
@@ -16,7 +16,7 @@ Configure New Page
     Set Browser Timeout     ${old_timeout}
 
 Open the browser on the DEMOQA website
-    New Browser     browser=${BROWSER}     headless=${HEADLESS} 
+    New Browser     browser=${BROWSER}     headless=${HEADLESS}     downloadsPath=${EXECDIR}\\assets\\download
     New Context     viewport=${VIEWPORT}
     Configure New Page
     Get Title     ==     DEMOQA
@@ -66,3 +66,11 @@ Perform a double mouse click
 Return to a tab by its ID 
     [Arguments]     ${id}
     Switch Page     ${id}
+
+Return the href of an element 
+    [Arguments]     ${element_with_href}
+
+    ${elem}=          Get Element   ${element_with_href} 
+    ${href}=          Get Property  ${elem}  href
+
+    RETURN    ${href}
