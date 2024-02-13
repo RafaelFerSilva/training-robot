@@ -54,3 +54,11 @@ Create data for a fake user
     ...          department=${department}
 
     RETURN     ${user}
+
+Perform a simple mouse click
+    [Arguments]     ${locator}      ${mouse_button}=left 
+    Click   ${locator}      ${mouse_button}
+
+Perform a double mouse click 
+    [Arguments]     ${locator}     ${mouse_button}=left
+    Click With Options      ${locator}      clickCount=2

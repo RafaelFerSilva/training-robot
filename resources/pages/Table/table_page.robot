@@ -51,8 +51,8 @@ Click on the button to open the item registration form in the table
   CLick   ${ADD_NEW_RECORD_BUTTON}
 
 Check if the registration modal is visible
-  [Arguments]     ${status}=visible
-  Get Element States    ${MODAL_HEADER}   *=      ${status}
+  [Arguments]     ${status}=visible    ${wait}=10s
+  Wait For Elements State   ${MODAL_HEADER}      ${status}     ${wait}   
 
 Click to close table record modal
   CLick       ${MODAL_HEADER_CLOSE}
