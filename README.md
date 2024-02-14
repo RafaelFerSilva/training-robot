@@ -7,6 +7,7 @@ This project is based on the Ebook **Robot Framework - A practical approach to t
 ### Prerequisites
 
   - [Python and PIP]([https://](https://www.python.org/))
+  - [Node]([https://](https://nodejs.org/en))
 
 ## Getting Started
 
@@ -36,6 +37,12 @@ This project is based on the Ebook **Robot Framework - A practical approach to t
 
   ```
   $ pip install -r requirements. txt
+  ```
+
+- Start Robot Framework Browser library
+  
+  ```
+  $ rfbrowser init
   ```
 
 ## Usage
