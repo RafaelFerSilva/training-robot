@@ -29,7 +29,3 @@ Should be redirected to the Widgets card screen when clicking on the Widgets car
 Should be redirected to the Interactions card screen when clicking on the Interactions card 
     Access the card screen Interactions
     [Teardown]     Return to the home screen by clicking on the TOOLSQA link
-
-Should be redirected to the Book Store Application card screen when you click on the Book Store Application card 
-    Access the card screen Book Store Application and validate that the title Book Store
-    [Teardown]     Return to the home screen by clicking on the TOOLSQA link

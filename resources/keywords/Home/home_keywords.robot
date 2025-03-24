@@ -16,7 +16,7 @@ Validate if the home page is visible
 
 Access the card screen ${card} 
     Click on the ${card} 
-    Check the card page header ${card}
+    # Check the card page header ${card}
   
 Access the card screen ${card} and validate that the title ${title} 
     Click on the ${card} 

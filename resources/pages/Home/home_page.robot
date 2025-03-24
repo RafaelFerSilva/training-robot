@@ -16,7 +16,7 @@ Click on the ${card}
     Click     ${element}
   
 Check the card page header ${card} 
-    Get Text    ${SCREEN}     ==     ${card}
+    Get Text        //h1       ==    ${card}
   
 Click on the TOOLSQA link in the card screen header
     Click     ${LINK_TOOLQA_HEADER}
